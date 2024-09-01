@@ -1,29 +1,54 @@
+/* General Styling */
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-color: #121212; /* Dark background */
+  color: #e0e0e0; /* Light text color */
+  padding: 20px;
+  margin: 0;
+}
+
+h3 {
+  color: #bb86fc; /* Light purple */
+  text-align: center;
+  font-size: 26px;
+  margin-bottom: 20px;
+}
+
+.error-message {
+  color: #cf6679; /* Light red */
+  font-size: 14px;
+  margin-top: 10px;
+  margin-bottom: 15px;
+}
+
 /* Container Styling */
 .container {
   display: flex;
   justify-content: space-between;
+  gap: 20px;
+  flex-wrap: wrap; /* Ensure responsiveness */
 }
 
 /* Sidebar Styling */
 .sidebar-container {
   width: 100%;
   display: flex;
-  flex-direction: row;
   justify-content: center;
 }
 
-/* Sidebar Styling */
 .sidebar {
-  width: 60%;
-  padding: 20px;
-  background-color: #f5f5f5;
-  border-radius: 10px;
-  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
-  transition: transform 0.3s ease-in-out;
+  width: 100%;
+  max-width: 800px; /* Restrict max width */
+  padding: 30px;
+  background-color: #1e1e1e; /* Darker background */
+  border-radius: 12px;
+  box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.6); /* Enhanced shadow */
+  transition: transform 0.3s ease-in-out, box-shadow 0.3s ease;
 }
 
 .sidebar:hover {
-  transform: translateY(-5px);
+  transform: translateY(-10px);
+  box-shadow: 0px 12px 24px rgba(0, 0, 0, 0.8); /* Darker shadow on hover */
 }
 
 /* Form Group Styling */
@@ -34,117 +59,100 @@
 label {
   display: block;
   font-weight: bold;
-  margin-bottom: 5px;
-  color: #333;
+  margin-bottom: 6px;
+  color: #e0e0e0; /* Light text color */
 }
 
 input {
-  width: calc(100% - 16px); /* Adjust for padding */
-  padding: 10px;
-  border: 2px solid #ccc;
-  border-radius: 5px;
-  box-sizing: border-box;
+  width: 100%;
+  padding: 12px;
+  border: 2px solid #333; /* Dark border */
+  border-radius: 8px;
+  background-color: #2c2c2c; /* Darker input background */
+  color: #e0e0e0; /* Light text color */
   transition: border-color 0.3s ease, box-shadow 0.3s ease;
 }
 
 input:focus {
-  border-color: #007bff;
-  box-shadow: 0px 0px 8px rgba(0, 123, 255, 0.5);
+  border-color: #bb86fc; /* Light purple */
+  box-shadow: 0px 0px 8px rgba(187, 134, 252, 0.5);
 }
 
 input:hover {
-  border-color: #00bfff;
+  border-color: #3700b3; /* Darker purple */
 }
 
 /* Button Styling */
 button {
   padding: 12px 24px;
-  background-color: #007bff;
-  color: white;
+  background-color: #bb86fc; /* Light purple */
+  color: #121212; /* Dark text color */
   border: none;
-  border-radius: 25px;
+  border-radius: 30px;
   cursor: pointer;
   transition: background-color 0.3s ease, transform 0.3s ease;
   font-weight: bold;
 }
 
 button:hover {
-  background-color: #0056b3;
+  background-color: #8c5e9f; /* Darker purple */
   transform: scale(1.05);
 }
 
 /* Status Bar Styling */
 .status-bar {
-  width: 30%;
+  width: 100%;
+  max-width: 300px; /* Restrict max width */
   padding: 20px;
   display: flex;
   flex-direction: column;
-  justify-content: center;
-  box-sizing: border-box; /* Ensure padding is included in width */
-  position: relative; /* For connecting lines */
+  gap: 10px;
+  background-color: #1e1e1e; /* Darker background */
+  border-radius: 12px;
+  box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.6); /* Enhanced shadow */
 }
 
-/* Status Label Container */
-.status-labels-container {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
-
-/* Status Label Styling */
 .status-label {
-  font-size: 16px;
+  font-size: 24px; /* Larger font size */
   font-weight: bold;
-  margin: 10px 0;
-  color: #ffffff; /* Default text color */
-  transition: color 0.3s ease, transform 0.3s ease, background-color 0.3s ease;
-  padding: 10px;
-  border-radius: 5px;
-  display: inline-block;
-  width: 100%;
-  text-align: center;
+  color: #e0e0e0; /* Light text color */
+  transition: background-color 0.3s ease, transform 0.3s ease, color 0.3s ease;
+  width: 100px; /* Larger width */
+  height: 100px; /* Larger height to match width */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%; /* Make it circular */
   border: 2px solid transparent;
-  position: relative; /* For connecting lines */
-  background-color: #333; /* Default background */
+  background-color: #333; /* Darker background */
+  text-align: center;
+  padding: 0; /* Remove padding */
+  box-sizing: border-box; /* Ensure border is included in size */
 }
 
-/* Connecting Line Styling */
-.status-label:before {
-  content: '';
-  position: absolute;
-  top: 50%;
-  left: 100%;
-  width: 20px;
-  height: 2px;
-  background-color: #ccc;
-  transform: translateY(-50%);
-  transition: background-color 0.3s ease;
+/* Status Label Colors */
+.status-label.sender.filled {
+  background-color: #cf6679; /* Light red */
+  color: white;
 }
 
-.status-label:last-child:before {
-  display: none; /* Hide connecting line for the last item */
+.status-label.receiver.filled {
+  background-color: #03dac6; /* Teal */
+  color: white;
 }
 
-/* Filled Status Labels */
-.status-label.sender {
-  background-color: #ff5733; /* Red-Orange */
+.status-label.shipment.filled {
+  background-color: #ffab00; /* Amber */
+  color: white;
 }
 
-.status-label.receiver {
-  background-color: #33c1ff; /* Sky Blue */
-}
-
-.status-label.shipment {
-  background-color: #ffc107; /* Amber */
-}
-
-.status-label.trackId {
-  background-color: #28a745; /* Green */
+.status-label.trackId.filled {
+  background-color: #69f0ae; /* Light green */
+  color: white;
 }
 
 /* Filled Status Label with Animation */
 .status-label.filled {
-  color: white;
   border: 2px solid transparent;
   transform: scale(1.1);
   animation: pulse 1s infinite;
@@ -155,7 +163,7 @@ button:hover {
     transform: scale(1);
   }
   50% {
-    transform: scale(1.03);
+    transform: scale(1.05);
   }
   100% {
     transform: scale(1);
@@ -164,30 +172,25 @@ button:hover {
 
 /* Status Label Hover Effect */
 .status-label:hover {
-  background-color: #343a40;
-  color: #ffffff;
-  border-color: #ffffff;
+  background-color: #444; /* Darker background */
+  color: #e0e0e0; /* Light text color */
+  border-color: #e0e0e0; /* Light border */
   cursor: pointer;
 }
 
-/* General Styling */
-body {
-  font-family: Arial, sans-serif;
-  background-color: #eef2f7;
-  padding: 20px;
-  margin: 0;
+/* Connecting Line Styling */
+.status-label:before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 100%;
+  width: 20px;
+  height: 2px;
+  background-color: #555; /* Darker line */
+  transform: translateY(-50%);
+  transition: background-color 0.3s ease;
 }
 
-h3 {
-  color: #007bff;
-  text-align: center;
-  font-size: 24px;
-  margin-bottom: 20px;
-}
-
-.error-message {
-  color: red;
-  font-size: 14px;
-  margin-top: -10px;
-  margin-bottom: 15px;
+.status-label:last-child:before {
+  display: none; /* Hide connecting line for the last item */
 }

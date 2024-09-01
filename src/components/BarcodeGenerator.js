@@ -8,7 +8,7 @@ import "./BarcodeGenerator.css";
 function BarcodeGenerator() {
   const barcodeRef = useRef(null);
   const location = useLocation();
-  const [showBarcode, setShowBarcode] = useState(false);
+  const [showBarcode, setShowBarcode] = useState(true); // Set default to true if you want the barcode shown initially
   const [isEditing, setIsEditing] = useState(false);
   const [sender, setSender] = useState("");
   const [receiver, setReceiver] = useState("");

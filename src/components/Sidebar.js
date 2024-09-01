@@ -100,22 +100,22 @@ function Sidebar() {
       </div>
       <div className="status-bar">
         <div
-          className={`status-label ${isFieldFilled("sender") ? "filled" : ""}`}
+          className={`status-label sender ${isFieldFilled("sender") ? "filled" : ""}`}
         >
           Sender
         </div>
         <div
-          className={`status-label ${isFieldFilled("receiver") ? "filled" : ""}`}
+          className={`status-label receiver ${isFieldFilled("receiver") ? "filled" : ""}`}
         >
           Receiver
         </div>
         <div
-          className={`status-label ${isFieldFilled("shipment") ? "filled" : ""}`}
+          className={`status-label shipment ${isFieldFilled("shipment") ? "filled" : ""}`}
         >
           Shipment
         </div>
         <div
-          className={`status-label ${isFieldFilled("trackId") ? "filled" : ""}`}
+          className={`status-label trackId ${isFieldFilled("trackId") ? "filled" : ""}`}
         >
           Track ID
         </div>
