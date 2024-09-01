@@ -1,0 +1,193 @@
+/* Container Styling */
+.container {
+  display: flex;
+  justify-content: space-between;
+}
+
+/* Sidebar Styling */
+.sidebar-container {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+
+/* Sidebar Styling */
+.sidebar {
+  width: 60%;
+  padding: 20px;
+  background-color: #f5f5f5;
+  border-radius: 10px;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease-in-out;
+}
+
+.sidebar:hover {
+  transform: translateY(-5px);
+}
+
+/* Form Group Styling */
+.form-group {
+  margin-bottom: 20px;
+}
+
+label {
+  display: block;
+  font-weight: bold;
+  margin-bottom: 5px;
+  color: #333;
+}
+
+input {
+  width: calc(100% - 16px); /* Adjust for padding */
+  padding: 10px;
+  border: 2px solid #ccc;
+  border-radius: 5px;
+  box-sizing: border-box;
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+input:focus {
+  border-color: #007bff;
+  box-shadow: 0px 0px 8px rgba(0, 123, 255, 0.5);
+}
+
+input:hover {
+  border-color: #00bfff;
+}
+
+/* Button Styling */
+button {
+  padding: 12px 24px;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 25px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+  font-weight: bold;
+}
+
+button:hover {
+  background-color: #0056b3;
+  transform: scale(1.05);
+}
+
+/* Status Bar Styling */
+.status-bar {
+  width: 30%;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  box-sizing: border-box; /* Ensure padding is included in width */
+  position: relative; /* For connecting lines */
+}
+
+/* Status Label Container */
+.status-labels-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* Status Label Styling */
+.status-label {
+  font-size: 16px;
+  font-weight: bold;
+  margin: 10px 0;
+  color: #ffffff; /* Default text color */
+  transition: color 0.3s ease, transform 0.3s ease, background-color 0.3s ease;
+  padding: 10px;
+  border-radius: 5px;
+  display: inline-block;
+  width: 100%;
+  text-align: center;
+  border: 2px solid transparent;
+  position: relative; /* For connecting lines */
+  background-color: #333; /* Default background */
+}
+
+/* Connecting Line Styling */
+.status-label:before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 100%;
+  width: 20px;
+  height: 2px;
+  background-color: #ccc;
+  transform: translateY(-50%);
+  transition: background-color 0.3s ease;
+}
+
+.status-label:last-child:before {
+  display: none; /* Hide connecting line for the last item */
+}
+
+/* Filled Status Labels */
+.status-label.sender {
+  background-color: #ff5733; /* Red-Orange */
+}
+
+.status-label.receiver {
+  background-color: #33c1ff; /* Sky Blue */
+}
+
+.status-label.shipment {
+  background-color: #ffc107; /* Amber */
+}
+
+.status-label.trackId {
+  background-color: #28a745; /* Green */
+}
+
+/* Filled Status Label with Animation */
+.status-label.filled {
+  color: white;
+  border: 2px solid transparent;
+  transform: scale(1.1);
+  animation: pulse 1s infinite;
+}
+
+@keyframes pulse {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.03);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+/* Status Label Hover Effect */
+.status-label:hover {
+  background-color: #343a40;
+  color: #ffffff;
+  border-color: #ffffff;
+  cursor: pointer;
+}
+
+/* General Styling */
+body {
+  font-family: Arial, sans-serif;
+  background-color: #eef2f7;
+  padding: 20px;
+  margin: 0;
+}
+
+h3 {
+  color: #007bff;
+  text-align: center;
+  font-size: 24px;
+  margin-bottom: 20px;
+}
+
+.error-message {
+  color: red;
+  font-size: 14px;
+  margin-top: -10px;
+  margin-bottom: 15px;
+}
